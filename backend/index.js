@@ -11,10 +11,7 @@ app.use(express.json())
 
 mongoose.connect('mongodb+srv://frontend:g2qWi91XudwbhB2P@mermtodolist.evhpy.mongodb.net/?retryWrites=true&w=majority&appName=MERMTodoList')
 
-app.get('/', (req, res) => {
-  // __dirname points to the folder containing this file (index.js)
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/get',(req,res) => {
