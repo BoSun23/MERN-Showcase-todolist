@@ -10,6 +10,11 @@ app.use(express.json())
 
 mongoose.connect('mongodb+srv://frontend:g2qWi91XudwbhB2P@mermtodolist.evhpy.mongodb.net/?retryWrites=true&w=majority&appName=MERMTodoList')
 
+app.get('/', (req, res) => {
+  res.send('Hello from the MERN Showcase Todolist API!');
+});
+
+
 app.get('/get',(req,res) => {
     TodoModel.find()
     .then(result => res.json(result))
