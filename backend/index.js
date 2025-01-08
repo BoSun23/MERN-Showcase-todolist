@@ -1,17 +1,15 @@
-const express = require('express')
+const express = require('express');
+const path = require('path');
+const app = express();
 const mongoose = require('mongoose')
 const cors =  require('cors')
 const TodoModel = require('./Models/Todo')
-const path = require('path')
-
-const app = express()
 app.use(cors())
 app.use(express.json())
 
 
 mongoose.connect('mongodb+srv://frontend:g2qWi91XudwbhB2P@mermtodolist.evhpy.mongodb.net/?retryWrites=true&w=majority&appName=MERMTodoList')
 
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/get',(req,res) => {
